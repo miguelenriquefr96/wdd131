@@ -1,15 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>WDD 131 – Fundamentos da Web Dinâmica - Miguel Enrique Fernandez Rodriguez</title>
+    <link rel="stylesheet" href="estilos/base.css">
+    <script src="scripts/obterdatas.js" defer></script>
+    <meta name="description"
+        content="WDD 131 – Fundamentos da Web Dinâmica. Página inicial de Miguel Enrique Fernandez Rodriguez.">
+    <meta name="author" content="Miguel Enrique Fernandez Rodriguez">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <h1>Miguel</h1>
-    <p> Estudante</p>
+
+    <header>
+        <h1>WDD 131 <span>Fundamentos da Web Dinâmica - Miguel Enrique Fernandez Rodriguez</span></h1>
+        <nav>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/miguel-enrique-fernandez-rodriguez-088626b6/?isSelfProfile=false"
+                        target="_blank">LinkedIn</a></li>
+                <li><a href="https://byui.instructure.com/" target="_blank">Canvas</a></li>
+                <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/28?lang=por&id=p30#p30"
+                        target="_blank">Escritura</a></li>
+                <li><a href="#projeto-final">Projeto Final</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="main-title">Miguel Enrique Fernandez Rodriguez</h1>
+
+        <div class="container-flex">
+            <section class="card card-about">
+                <div class="card-header">Sobre Mim</div>
+                <div class="card-body">
+                    <div class="profile-container">
+                        <p class="profile-text">
+                            Meu nome é Miguel Enrique Fernandez Rodriguez. Nasci na Venezuela e moro atualmente na
+                            cidade de Curitiba - PR, Brasil. Sou casado e trabalho na empresa Michelin na área de
+                            suporte. Sou apaixonado pelos esportes como futebol e sou faixa preta 2º Dan de karatê
+                            shotokan, também amo nadar e corrida.
+                        </p>
+                        <div class="profile-img-container">
+                            <img src="imagens/miguel.jpg" alt="Olá! Sou Miguel" width="200">
+                        </div>
+                    </div>
+
+                    <div class="section-divider">
+                        <h3>Curitiba, Paraná</h3>
+                    </div>
+
+                    <div class="city-container">
+                        <div class="flag-container">
+                            <div class="flag-box">
+                                <img src="imagens/Bandeira_de_Curitiba.jpg" alt="Bandeira Oficial de Curitiba"
+                                    width="200">
+                            </div>
+                            <div class="flag-caption">Bandeira Oficial de Curitiba</div>
+                        </div>
+                        <p class="city-text">
+                            Curitiba é a capital do estado do Paraná e é conhecida por sua organização urbana e
+                            qualidade de vida. A cidade se destaca pelo planejamento inovador e pelas soluções
+                            sustentáveis aplicadas ao transporte público e ao meio ambiente. Além disso, Curitiba possui
+                            diversos parques e áreas verdes, como o famoso Jardim Botânico.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card card-resources">
+                <div class="card-header">Recursos Web Dev</div>
+                <div class="card-body">
+                    <ul class="resources-list">
+                        <li><a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a></li>
+                        <li><a href="https://w3schools.com" target="_blank">W3Schools</a></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="anoAtual"></span> Miguel Enrique Fernandez Rodriguez - Paraná, Brasil</p>
+        <p id="ultimaModificacao"></p>
+    </footer>
+
 </body>
 
 </html>
