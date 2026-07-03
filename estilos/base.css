@@ -5,7 +5,6 @@
 }
 
 body {
-
     font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
     background-color: #f4f6f8;
@@ -16,7 +15,6 @@ h1,
 h2,
 h3,
 .card-header {
-
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -28,14 +26,16 @@ header {
     text-align: center;
 }
 
+
 header h1,
 header h1 #course-title {
     color: #ffffff;
 }
 
+
 header h1 span {
     display: block;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: #eaeded;
     margin-top: 5px;
     font-weight: normal;
@@ -82,7 +82,6 @@ main {
 
 
 .container-flex {
-
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 30px;
@@ -131,6 +130,12 @@ main {
     display: block;
     border: 2px solid #1b557a;
     border-radius: 4px;
+}
+
+
+.flag-container {
+    flex-shrink: 0;
+    max-width: 200px;
 }
 
 .flag-caption {
@@ -188,6 +193,7 @@ main {
     text-decoration: underline;
 }
 
+
 footer {
     background-color: #1b557a;
     color: #ffffff;
@@ -203,14 +209,13 @@ footer p {
 
 .highlight-yellow {
     color: #f1c40f;
-    /* Amarelo bem visível para a modificação */
     font-weight: bold;
 }
 
 
 @media (max-width: 768px) {
 
-    /* No celular o Grid vira uma única coluna */
+
     .container-flex {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -227,9 +232,4 @@ footer p {
         gap: 10px;
         align-items: center;
     }
-}
-
-.flag-container {
-    flex-shrink: 0;
-    max-width: 200px;
 }
