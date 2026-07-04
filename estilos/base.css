@@ -36,7 +36,7 @@ header h1 #course-title {
 
 
 header h1 span {
-    display: block;
+    display: inline;
     margin-top: 5px;
     color: #ffffff;
     font-weight: normal;
