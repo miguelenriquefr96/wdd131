@@ -106,8 +106,9 @@ figure {
 figure img {
     width: 100%;
     height: auto;
-    display: block;
+    aspect-ratio: 800 / 530;
     object-fit: cover;
+    display: block;
 }
 
 figcaption {

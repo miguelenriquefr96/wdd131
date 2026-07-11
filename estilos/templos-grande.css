@@ -44,7 +44,9 @@
     main {
         display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
+        /* Cria as 3 colunas uniformes */
         gap: 20px !important;
+        /* Espaço simétrico entre os blocos */
         max-width: 1200px !important;
         padding: 2.5rem 2.5rem;
     }
