@@ -1,0 +1,52 @@
+@media (min-width: 768px) {
+
+    header {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 1.2rem 2.5rem;
+    }
+
+    header h1 {
+        margin-bottom: 0;
+    }
+
+    #menu-toggle {
+        display: none !important;
+    }
+
+    nav {
+        width: auto !important;
+    }
+
+    nav ul {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 1.5rem !important;
+        margin-top: 0 !important;
+        background-color: #333333;
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+    }
+
+    nav ul li a {
+        padding: 0.5rem 1rem;
+    }
+
+    nav ul li a:hover {
+        background-color: #ffffff !important;
+        color: #333333 !important;
+    }
+
+    main {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        padding: 2.5rem 2.5rem;
+    }
+
+    main h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+}
