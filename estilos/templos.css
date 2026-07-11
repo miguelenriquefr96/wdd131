@@ -38,15 +38,9 @@ header .header-title {
     font-size: 2rem;
     color: #ffffff;
     cursor: pointer;
-    padding: 0.2rem;
     position: absolute;
     right: 1.5rem;
     top: 0.8rem;
-    transition: color 0.2s ease;
-}
-
-#menu-toggle:hover {
-    color: #cccccc;
 }
 
 nav {
@@ -72,13 +66,6 @@ nav ul li a {
     color: #ffffff;
     text-decoration: none;
     font-weight: 500;
-    border-radius: 4px;
-    transition: all 0.2s ease;
-}
-
-nav ul li a:hover {
-    background-color: #ffffff;
-    color: #333333;
 }
 
 nav.open ul {
@@ -88,12 +75,12 @@ nav.open ul {
 main {
     flex: 1;
     width: 100%;
-    max-width: 1024px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 1.5rem;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
 }
 
 main h1 {
@@ -102,12 +89,11 @@ main h1 {
     font-size: 1.4rem;
     color: #333333;
     margin-bottom: 0.5rem;
-    grid-column: 1 / -1;
 }
 
 figure {
     background-color: #ffffff;
-    border: 1px solid #ffffff;
+    border: 1px solid #e0e0e0;
     border-radius: 8px;
     overflow: hidden;
     display: flex;
@@ -115,12 +101,6 @@ figure {
     align-items: center;
     padding-bottom: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-figure:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 figure img {
@@ -136,7 +116,6 @@ figcaption {
     text-align: center;
     font-weight: 600;
     color: #444444;
-    font-size: 0.95rem;
 }
 
 footer {
@@ -145,7 +124,5 @@ footer {
     text-align: center;
     padding: 1.5rem 1rem;
     font-size: 0.85rem;
-    line-height: 1.6;
     margin-top: auto;
-    border-top: 1px solid #e0e0e0;
 }

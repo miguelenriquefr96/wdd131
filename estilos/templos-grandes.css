@@ -25,28 +25,38 @@
         flex-direction: row !important;
         gap: 1.5rem !important;
         margin-top: 0 !important;
-        background-color: #333333;
-        padding: 0.4rem 1rem;
-        border-radius: 20px;
+        background-color: transparent !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
     }
 
     nav ul li a {
         padding: 0.5rem 1rem;
+        color: #ffffff !important;
     }
 
     nav ul li a:hover {
         background-color: #ffffff !important;
         color: #333333 !important;
+        border-radius: 4px;
     }
 
     main {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px !important;
+        max-width: 1200px !important;
         padding: 2.5rem 2.5rem;
     }
 
     main h1 {
+        grid-column: 1 / -1;
         font-size: 1.8rem;
         margin-bottom: 1rem;
+    }
+
+    figure {
+        width: 100% !important;
+        margin: 0 !important;
     }
 }
