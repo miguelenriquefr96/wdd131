@@ -1,0 +1,64 @@
+@media (min-width: 768px) {
+
+    header {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 1.2rem 2.5rem;
+    }
+
+    header .header-title {
+        margin-bottom: 0;
+    }
+
+    #menu-toggle {
+        display: none !important;
+    }
+
+    nav {
+        width: auto !important;
+    }
+
+    nav ul {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 1.5rem !important;
+        margin-top: 0 !important;
+        background-color: transparent !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+    }
+
+    nav ul li a {
+        padding: 0.5rem 1rem;
+        color: #ffffff !important;
+    }
+
+    nav ul li a:hover {
+        background-color: #ffffff !important;
+        color: #333333 !important;
+        border-radius: 4px;
+    }
+
+    main {
+        display: block !important;
+        max-width: 1200px !important;
+        padding: 2rem 2.5rem !important;
+        margin: 0 auto !important;
+    }
+
+    .galeria-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 25px !important;
+        width: 100% !important;
+    }
+
+    figure,
+    .templo-card {
+        width: 100% !important;
+        margin: 0 !important;
+        height: 100%;
+    }
+}
