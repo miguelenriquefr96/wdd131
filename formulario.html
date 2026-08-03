@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação do Produto</title>
+    <link rel="stylesheet" href="/estilos/formulario.css">
+    <script src="/scripts/formulario.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Avaliação do Produto</h1>
+    </header>
+
+    <main>
+        <form action="/avaliacao.html" method="get">
+
+            <div>
+                <label for="produto">Nome do Produto</label>
+                <select id="produto" name="produto" required>
+                    <option value="" disabled selected>Escolha um Produto ...</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Classificação Geral</label>
+                <div>
+                    <div>
+                        <span>&star;</span>
+                        <input type="radio" id="star1" name="classificacao" value="1" required>
+                        <label for="star1">1 Estrela</label>
+                    </div>
+                    <div>
+                        <span>&star;&star;</span>
+                        <input type="radio" id="star2" name="classificacao" value="2" required>
+                        <label for="star2">2 Estrelas</label>
+                    </div>
+                    <div>
+                        <span>&star;&star;&star;</span>
+                        <input type="radio" id="star3" name="classificacao" value="3" required>
+                        <label for="star3">3 Estrelas</label>
+                    </div>
+                    <div>
+                        <span>&star;&star;&star;&star;</span>
+                        <input type="radio" id="star4" name="classificacao" value="4" required>
+                        <label for="star4">4 Estrelas</label>
+                    </div>
+                    <div>
+                        <span>&star;&star;&star;&star;&star;</span>
+                        <input type="radio" id="star5" name="classificacao" value="5" required>
+                        <label for="star5">5 Estrelas</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div>
+                <label for="data-instalacao">Data de Instalação</label>
+                <input type="date" id="data-instalacao" name="data_instalacao" required>
+            </div>
+
+
+            <div>
+                <label>Quais recursos você achou úteis no produto? (Marque todos que se aplicam)</label>
+                <div>
+                    <div>
+                        <input type="checkbox" id="durabilidade" name="recursos" value="Durabilidade">
+                        <label for="durabilidade">Durabilidade</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="facilidade" name="recursos" value="Facilidade de Uso">
+                        <label for="facilidade">Facilidade de Uso</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="desempenho" name="recursos" value="Desempenho">
+                        <label for="desempenho">Desempenho</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="design" name="recursos" value="Design">
+                        <label for="design">Design</label>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <label for="avaliacao">Avaliação Escrita (Opcional)</label>
+                <textarea id="avaliacao" name="avaliacao"></textarea>
+            </div>
+
+            <div>
+                <label for="nome-usuario">Seu Nome (Opcional)</label>
+                <input type="text" id="nome-usuario" name="nome_usuario">
+            </div>
+
+            <input type="submit" value="Publicar Avaliação">
+
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy;2026 - Miguel Enrique Fernandez Rodriguez - Brasil </p>
+
+    </footer>
+
+
+</body>
+
+</html>
