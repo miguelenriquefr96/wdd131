@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Entre em contato com a MS Staben Serviços Gerais. Solicite seu orçamento online ou tire suas dúvidas técnicas via formulário ou WhatsApp.">
+    <title>Contato | MS Staben Serviços Gerais</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <link rel="stylesheet" href="estilos/estilos-mobile.css">
+    <script src="scripts/scripts.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header-principal">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="imagens/MSLOGONOVO.webp" alt="Logo MS Staben Serviços Gerais" class="logo-img" width="200">
+                <div class="logo-texto">
+                    <span class="logo-marca">MS Construções</span>
+                    <span class="logo-sub">Serviços Gerais</span>
+                </div>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menu de navegação">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="portfolio.html">Portfólio</a></li>
+                    <li><a href="contato.html" class="active">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Formulário de Atendimento &amp; Contato</h1>
+            <p>Preencha os dados abaixo para solicitar seu orçamento ou fale diretamente conosco através dos nossos
+                canais de atendimento.</p>
+        </div>
+    </section>
+
+    <main class="container">
+
+        <div class="grid-contato">
+
+            <!-- Coluna do Formulário -->
+            <section class="coluna-form">
+                <h2>Solicite seu Orçamento</h2>
+
+                <form id="formOrcamento" class="form-atendimento" novalidate>
+
+                    <div class="campo-form">
+                        <label for="nome">Nome Completo *</label>
+                        <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+                        <span class="msg-erro" id="erroNome"></span>
+                    </div>
+
+                    <div class="campo-form">
+                        <label for="email">E-mail de Contato *</label>
+                        <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
+                        <span class="msg-erro" id="erroEmail"></span>
+                    </div>
+
+                    <div class="campo-form">
+                        <label for="telefone">Telefone / WhatsApp *</label>
+                        <input type="tel" id="telefone" name="telefone" required placeholder="(41) 99999-9999">
+                        <span class="msg-erro" id="erroTelefone"></span>
+                    </div>
+
+                    <div class="campo-form">
+                        <label for="servico">Serviço de Interesse *</label>
+                        <select id="servico" name="servico" required>
+                            <option value="">Selecione uma opção...</option>
+                            <option value="Eletrica">Instalações Elétricas</option>
+                            <option value="Pintura">Pintura Residencial / Comercial</option>
+                            <option value="Reformas">Reformas em Geral / Hidráulica</option>
+                            <option value="Outro">Outros / Dúvidas Técnicas</option>
+                        </select>
+                        <span class="msg-erro" id="erroServico"></span>
+                    </div>
+
+                    <div class="campo-form">
+                        <label for="mensagem">Descrição do Serviço / Necessidade *</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required
+                            placeholder="Descreva o que precisa ser feito ou suas dúvidas técnicas..."></textarea>
+                        <span class="msg-erro" id="erroMensagem"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Enviar Solicitação de Orçamento</button>
+
+                    <div id="statusForm" class="status-form" aria-live="polite"></div>
+                </form>
+
+                <!-- Histórico de Solicitações Salvas no localStorage -->
+                <div id="historicoContainer" class="historico-container" style="display: none;">
+                    <h3>Sua Última Solicitação Enviada (Salva no Navegador)</h3>
+                    <div id="historicoConteudo" class="historico-card"></div>
+                    <button id="btnLimparHistorico" class="btn btn-sm">Limpar histórico salvo</button>
+                </div>
+            </section>
+
+            <!-- Coluna de Canais Diretos -->
+            <aside class="coluna-info">
+                <h2>Canais Diretos</h2>
+
+                <div class="card-contato-direto">
+                    <h3>💬 WhatsApp Direto</h3>
+                    <p>Atendimento ágil para dúvidas e agendamento de visitas técnicas.</p>
+                    <a href="https://wa.me/5541991718434" target="_blank" rel="noopener" class="btn btn-whatsapp">Falar
+                        no WhatsApp</a>
+                </div>
+
+                <div class="card-contato-direto">
+                    <h3>✉️ E-mail Corporativo</h3>
+                    <p>Envie projetos e plantas para análise detalhada de orçamentos.</p>
+                    <p><strong>m_staben@hotmail.com</strong></p>
+                </div>
+
+                <div class="card-contato-direto">
+                    <h3>📍 Localização &amp; Atendimento</h3>
+                    <p>Estamos em: Rua Rio Purus, 197 Weissopolis - Pinhais, PR.</p>
+                    <p>Atendemos Pinhais, Curitiba, São José dos Pinhais, Colombo e região metropolitana.</p>
+                </div>
+            </aside>
+
+        </div>
+
+    </main>
+
+    <footer class="footer-principal">
+        <div class="container footer-content">
+            <h3>MS Staben Serviços Gerais</h3>
+            <p>Pinhais - PR | Atendimento regional em Curitiba e RMC</p>
+
+            <div class="footer-redes">
+                <a href="https://wa.me/5541991718434" target="_blank" rel="noopener noreferrer" class="link-social">
+                    <svg class="icone-redes" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                    </svg>
+                    <span>(41) 99171-8434</span>
+                </a>
+
+                <a href="https://www.instagram.com/mstaben_construcoes" target="_blank" rel="noopener noreferrer"
+                    class="link-social">
+                    <svg class="icone-redes" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                    <span>@mstaben_construcoes</span>
+                </a>
+
+                <a href="mailto:m_staben@hotmail.com" class="link-social">
+                    <svg class="icone-redes" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z" />
+                    </svg>
+                    <span>m_staben@hotmail.com</span>
+                </a>
+            </div>
+
+            <p class="copyright">&copy; MS Staben Serviços Gerais - Pinhais, PR - Brasil. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
