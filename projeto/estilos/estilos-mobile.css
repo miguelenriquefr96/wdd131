@@ -1,19 +1,19 @@
 @media (max-width: 600px) {
 
-    /* 1. Galeria passa a ter 1 coluna única */
+
     .galeria-portfolio {
         grid-template-columns: 1fr;
         gap: 15px;
         margin-top: 20px;
     }
 
-    /* 2. Ajuste na altura da imagem para caber na tela do celular */
+
     .card-portfolio img {
         height: 200px;
         padding: 5px;
     }
 
-    /* 3. Filtros empilhados ou com rolagem para não quebrar o layout */
+
     .filtro-container {
         display: flex;
         flex-wrap: wrap;
@@ -22,11 +22,11 @@
     }
 
     .btn-filtro {
-        padding: 8px 14px;
+        padding: 10px 16px;
         font-size: 0.85rem;
     }
 
-    /* 4. Modal de imagem adaptado para telas pequenas */
+
     .modal-portfolio {
         padding-top: 40px;
     }
@@ -36,12 +36,13 @@
         max-height: 75vh;
     }
 
-    /* Botão de fechar (X) maior e mais fácil de tocar */
+
     .fechar-modal {
         top: 10px;
-        right: 20px;
+        right: 15px;
         font-size: 35px;
         padding: 10px;
+        line-height: 1;
     }
 
     .legenda-modal {

@@ -22,7 +22,8 @@
     <header class="header-principal">
         <div class="container header-container">
             <a href="index.html" class="logo">
-                <img src="imagens/MSLOGONOVO.webp" alt="Logo MS Staben Serviços Gerais" class="logo-img" width="200">
+                <img src="imagens/MSLOGONOVO.webp" alt="Logo MS Staben Serviços Gerais" class="logo-img" width="200"
+                    height="60">
                 <div class="logo-texto">
                     <span class="logo-marca">MS Construções</span>
                     <span class="logo-sub">Serviços Gerais</span>
@@ -55,63 +56,89 @@
     <main class="container secao-detalhes">
 
 
-        <!-- Galeria de 9 fotos (Grade de 3x3) -->
         <div class="galeria-portfolio">
 
             <!-- Linha 1 -->
-            <article class="card-portfolio card-detalhe-servico" data-categoria="construção">
-                <img src="imagens/obra1.webp" alt="construção">
+            <article class="card-portfolio card-detalhe-servico" data-categoria="construcao">
+                <img src="imagens/obra1.webp" alt="Projeto de construção estrutural em andamento" loading="lazy"
+                    width="400" height="300">
                 <div class="conteudo-portfolio">
+                    <h3>Construção Estrutural</h3>
+                    <p>Execução de infraestrutura e alvenaria residencial.</p>
                 </div>
             </article>
 
-            <article class="card-portfolio card-detalhe-servico" data-categoria="contrução">
-                <img src="imagens/obra2.webp" alt="construção">
+            <article class="card-portfolio card-detalhe-servico" data-categoria="construcao">
+                <img src="imagens/obra2.webp" alt="Fase intermediária de obra residencial" loading="lazy" width="400"
+                    height="300">
                 <div class="conteudo-portfolio">
+                    <h3>Reforma Residencial</h3>
+                    <p>Adequação e nivelamento de superfícies para acabamento.</p>
                 </div>
             </article>
 
-            <article class="card-portfolio card-detalhe-servico" data-categoria="construção">
-                <img src="imagens/resultados.webp" alt="construção">
+            <article class="card-portfolio card-detalhe-servico" data-categoria="construcao">
+                <img src="imagens/resultados.webp" alt="Resultado de acabamento estrutural" loading="lazy" width="400"
+                    height="300">
                 <div class="conteudo-portfolio">
+                    <h3>Alvenaria Finalizada</h3>
+                    <p>Entrega de estrutura reformada com padrão de qualidade.</p>
                 </div>
             </article>
 
-            <!-- Linha 2 -->
-            <article class="card-portfolio card-detalhe-servico" data-categoria="interno">
-                <img src="imagens/patrao.webp" alt="interno">
+
+            <article class="card-portfolio card-detalhe-servico" data-categoria="eletrica">
+                <img src="imagens/patrao.webp" alt="Instalação de padrão de entrada e quadro elétrico" loading="lazy"
+                    width="400" height="300">
                 <div class="conteudo-portfolio">
+                    <h3>Padrão Elétrico</h3>
+                    <p>Montagem e organização de painel de distribuição elétrica.</p>
                 </div>
             </article>
 
             <article class="card-portfolio card-detalhe-servico" data-categoria="pintura">
-                <img src="imagens/prep-pintura.webp" alt="Pintura interna e acabamento">
+                <img src="imagens/prep-pintura.webp" alt="Preparação de parede com emassamento para pintura"
+                    loading="lazy" width="400" height="300">
                 <div class="conteudo-portfolio">
+                    <h3>Preparação de Pintura</h3>
+                    <p>Tratamento de superfícies e aplicação de massa corrida.</p>
                 </div>
             </article>
 
-            <article class="card-portfolio card-detalhe-servico" data-categoria="feedback cliente">
-                <img src="imagens/feedback.webp" alt="cliente feliz">
+            <article class="card-portfolio card-detalhe-servico" data-categoria="feedback">
+                <img src="imagens/feedback.webp" alt="Cliente satisfeito com a entrega da obra" loading="lazy"
+                    width="400" height="300">
                 <div class="conteudo-portfolio">
+                    <h3>Satisfação do Cliente</h3>
+                    <p>Acompanhamento de entrega e aprovação do projeto.</p>
                 </div>
             </article>
 
-            <!-- Linha 3 -->
-            <article class="card-portfolio card-detalhe-servico" data-categoria="final obra">
-                <img src="imagens/resultado3.webp" alt="final da obra">
+
+            <article class="card-portfolio card-detalhe-servico" data-categoria="reformas">
+                <img src="imagens/resultado3.webp" alt="Finalização de reforma comercial interna" loading="lazy"
+                    width="400" height="300">
                 <div class="conteudo-portfolio">
+                    <h3>Reforma Comercial</h3>
+                    <p>Renovação completa de ambiente para negócios.</p>
                 </div>
             </article>
 
-            <article class="card-portfolio card-detalhe-servico" data-categoria="final de obra iluminação">
-                <img src="imagens/resultado2.webp" alt="final de obra iluminação">
+            <article class="card-portfolio card-detalhe-servico" data-categoria="eletrica">
+                <img src="imagens/resultado2.webp" alt="Instalação de iluminação moderna no teto" loading="lazy"
+                    width="400" height="300">
                 <div class="conteudo-portfolio">
+                    <h3>Iluminação de Ambientes</h3>
+                    <p>Projeto luminoso com instalação de spots LED.</p>
                 </div>
             </article>
 
-            <article class="card-portfolio card-detalhe-servico" data-categoria="escada interna">
-                <img src="imagens/resultado4.webp" alt="escada interna">
+            <article class="card-portfolio card-detalhe-servico" data-categoria="pintura">
+                <img src="imagens/resultado4.webp" alt="Pintura e acabamento de escada interna" loading="lazy"
+                    width="400" height="300">
                 <div class="conteudo-portfolio">
+                    <h3>Acabamento de Escada</h3>
+                    <p>Pintura técnica e renovação do espaço interno.</p>
                 </div>
             </article>
 
@@ -156,16 +183,12 @@
         </div>
     </footer>
 
-    <!-- Modal para Ampliar a Imagem -->
+
     <div id="modalPortfolio" class="modal-portfolio">
         <span class="fechar-modal" id="fecharModal">&times;</span>
         <img class="conteudo-modal" id="imgModal" alt="Imagem ampliada do projeto">
         <div id="legendaModal" class="legenda-modal"></div>
     </div>
-
-</body>
-
-</html>
 
 </body>
 

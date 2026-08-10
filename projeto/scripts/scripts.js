@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicialização das funções do site
     initMenuAtivo();
     initMenuMobile();
     initLazyLoading();
@@ -8,11 +7,24 @@ document.addEventListener('DOMContentLoaded', () => {
     initFormularioContato();
     carregarHistoricoLocalStorage();
     preencherParametroServicoURL();
+    initModalPortfolio();
 });
 
-/**
- * Função Auxiliar: Identifica e marca a página atual no menu de navegação
- */
+
+function escapeHTML(str) {
+    if (!str) return '';
+    return str.replace(/[&<>"']/g, (match) => {
+        const escapeMap = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;'
+        };
+        return escapeMap[match];
+    });
+}
+
 function initMenuAtivo() {
     const paginaAtual = window.location.pathname.split('/').pop() || 'index.html';
     const linksNav = document.querySelectorAll('.nav-menu a, nav a');
@@ -27,9 +39,7 @@ function initMenuAtivo() {
     });
 }
 
-/**
- * Função 1: Navegação Mobile (Menu Hamburguer)
- */
+
 function initMenuMobile() {
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
@@ -43,9 +53,7 @@ function initMenuMobile() {
     }
 }
 
-/**
- * Função 2: Carregamento Lento (Lazy Loading) de Imagens via IntersectionObserver
- */
+
 function initLazyLoading() {
     const imagensLazy = document.querySelectorAll('.lazy-img');
 
@@ -66,7 +74,7 @@ function initLazyLoading() {
 
         imagensLazy.forEach(img => observer.observe(img));
     } else {
-        // Fallback para navegadores sem suporte ao IntersectionObserver
+        // Fallback para navegadores sem suporte
         imagensLazy.forEach(img => {
             const srcReal = img.getAttribute('data-src');
             if (srcReal) img.src = srcReal;
@@ -74,27 +82,22 @@ function initLazyLoading() {
     }
 }
 
-/**
- * Função 3: Filtro Interativo de Serviços usando Arrays e Array Methods (filter, forEach)
- */
+
 function initFiltroServicos() {
     const botoesFiltro = document.querySelectorAll('.btn-filtro');
     const cardsServico = document.querySelectorAll('.card-detalhe-servico');
 
     if (botoesFiltro.length === 0 || cardsServico.length === 0) return;
 
-    // Converter NodeList em Array para uso de métodos de array
     const arrayCards = Array.from(cardsServico);
 
     botoesFiltro.forEach(botao => {
         botao.addEventListener('click', () => {
-            // Atualizar classe ativa dos botões
             botoesFiltro.forEach(b => b.classList.remove('active'));
             botao.classList.add('active');
 
             const categoriaSelecionada = botao.getAttribute('data-categoria');
 
-            // Filtragem utilizando branch condicional e métodos de array
             arrayCards.forEach(card => {
                 const categoriaCard = card.getAttribute('data-categoria');
 
@@ -108,9 +111,7 @@ function initFiltroServicos() {
     });
 }
 
-/**
- * Função 4: Acordeão de FAQ / Perguntas Frequentes
- */
+
 function initFAQAcordeao() {
     const perguntas = document.querySelectorAll('.faq-pergunta');
 
@@ -119,12 +120,10 @@ function initFAQAcordeao() {
             const itemPai = pergunta.parentElement;
             const jaAtivo = itemPai.classList.contains('ativo');
 
-            // Fechar todos os itens (repetição)
             document.querySelectorAll('.faq-item').forEach(item => {
                 item.classList.remove('ativo');
             });
 
-            // Se não estava ativo, abre o clicado (branch condicional)
             if (!jaAtivo) {
                 itemPai.classList.add('ativo');
             }
@@ -132,9 +131,7 @@ function initFAQAcordeao() {
     });
 }
 
-/**
- * Função 5: Validação, Processamento do Formulário e Salvamento em localStorage
- */
+
 function initFormularioContato() {
     const form = document.getElementById('formOrcamento');
     const statusDiv = document.getElementById('statusForm');
@@ -144,10 +141,8 @@ function initFormularioContato() {
     form.addEventListener('submit', (evento) => {
         evento.preventDefault();
 
-        // Limpar mensagens prévias de erro
         limparErrosFormulario();
 
-        // Objeto com os dados digitados
         const dadosForm = {
             nome: document.getElementById('nome').value.trim(),
             email: document.getElementById('email').value.trim(),
@@ -157,7 +152,6 @@ function initFormularioContato() {
             dataEnvio: new Date().toLocaleString('pt-BR')
         };
 
-        // Validação com branch condicional
         let formValido = true;
 
         if (dadosForm.nome.length < 3) {
@@ -186,12 +180,10 @@ function initFormularioContato() {
         }
 
         if (formValido) {
-            // Salvar no localStorage
             localStorage.setItem('msstaben_ultimo_orcamento', JSON.stringify(dadosForm));
 
-            // Feedback visual utilizando EXCLUSIVAMENTE Template Literals
             statusDiv.className = 'status-form sucesso';
-            statusDiv.innerHTML = `<p>✅ Obrigado, <strong>${dadosForm.nome}</strong>! Sua solicitação para <strong>${dadosForm.servico}</strong> foi enviada com sucesso em ${dadosForm.dataEnvio}. Entraremos em contato em breve!</p>`;
+            statusDiv.innerHTML = `<p>✅ Obrigado, <strong>${escapeHTML(dadosForm.nome)}</strong>! Sua solicitação para <strong>${escapeHTML(dadosForm.servico)}</strong> foi enviada com sucesso em ${dadosForm.dataEnvio}. Entraremos em contato em breve!</p>`;
 
             form.reset();
             carregarHistoricoLocalStorage();
@@ -202,17 +194,13 @@ function initFormularioContato() {
     });
 }
 
-/**
- * Função Auxiliar para Exibir Erros
- */
+
 function exibirErro(idElemento, mensagem) {
     const el = document.getElementById(idElemento);
     if (el) el.textContent = mensagem;
 }
 
-/**
- * Função Auxiliar para Limpar Erros do Form
- */
+
 function limparErrosFormulario() {
     const erros = document.querySelectorAll('.msg-erro');
     erros.forEach(el => el.textContent = '');
@@ -223,9 +211,7 @@ function limparErrosFormulario() {
     }
 }
 
-/**
- * Função 6: Carregar e Exibir Dados do localStorage usando Template Literals
- */
+
 function carregarHistoricoLocalStorage() {
     const containerHistorico = document.getElementById('historicoContainer');
     const conteudoHistorico = document.getElementById('historicoConteudo');
@@ -239,13 +225,12 @@ function carregarHistoricoLocalStorage() {
         try {
             const dados = JSON.parse(orcamentoSalvoJSON);
 
-            // Construção da string de saída usando EXCLUSIVAMENTE Template Literals
             conteudoHistorico.innerHTML = `
-                <p><strong>Nome:</strong> ${dados.nome}</p>
-                <p><strong>E-mail:</strong> ${dados.email} | <strong>Telefone:</strong> ${dados.telefone}</p>
-                <p><strong>Serviço Solicitado:</strong> ${dados.servico}</p>
-                <p><strong>Descrição:</strong> "${dados.mensagem}"</p>
-                <p><small>Enviado em: ${dados.dataEnvio}</small></p>
+                <p><strong>Nome:</strong> ${escapeHTML(dados.nome)}</p>
+                <p><strong>E-mail:</strong> ${escapeHTML(dados.email)} | <strong>Telefone:</strong> ${escapeHTML(dados.telefone)}</p>
+                <p><strong>Serviço Solicitado:</strong> ${escapeHTML(dados.servico)}</p>
+                <p><strong>Descrição:</strong> "${escapeHTML(dados.mensagem)}"</p>
+                <p><small>Enviado em: ${escapeHTML(dados.dataEnvio)}</small></p>
             `;
 
             containerHistorico.style.display = 'block';
@@ -264,9 +249,7 @@ function carregarHistoricoLocalStorage() {
     }
 }
 
-/**
- * Função Auxiliar: Preenche o combo do formulário com base no parâmetro URL ?servico=
- */
+
 function preencherParametroServicoURL() {
     const params = new URLSearchParams(window.location.search);
     const servicoParam = params.get('servico');
@@ -278,14 +261,15 @@ function preencherParametroServicoURL() {
 }
 
 
-document.addEventListener('DOMContentLoaded', () => {
+function initModalPortfolio() {
     const modal = document.getElementById('modalPortfolio');
     const imgModal = document.getElementById('imgModal');
     const legendaModal = document.getElementById('legendaModal');
     const btnFechar = document.getElementById('fecharModal');
     const cardsPortfolio = document.querySelectorAll('.card-portfolio');
 
-    // Ao clicar em qualquer card do portfólio
+    if (!modal) return;
+
     cardsPortfolio.forEach(card => {
         card.addEventListener('click', () => {
             const img = card.querySelector('img');
@@ -300,19 +284,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Fechar ao clicar no botão "X"
+    const fecharModal = () => {
+        modal.style.display = 'none';
+    };
+
     if (btnFechar) {
-        btnFechar.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
+        btnFechar.addEventListener('click', fecharModal);
     }
 
-    // Fechar ao clicar fora da imagem
-    if (modal) {
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-    }
-});
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            fecharModal();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            fecharModal();
+        }
+    });
+}
